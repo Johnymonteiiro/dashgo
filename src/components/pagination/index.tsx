@@ -1,11 +1,12 @@
 import { Box, Button, Stack } from "@chakra-ui/react";
+import { PaginationItems } from "./PaginationItems";
 
 
 export function Pagination (){
 
     return(
         <Stack
-          direction="row"
+          direction={["column", "row"]}
           spacing="6"
           mt="8"
           justify="space-between"
@@ -15,63 +16,12 @@ export function Pagination (){
               <strong>0</strong> - <strong>10</strong> ate <strong>100</strong>
           </Box>
            <Stack direction="row" spacing="2">
-           <Button 
-             size="sm"
-             fontSize="xs"
-             width="4"
-             colorScheme="pink"
-             disabled
-             _disabled={{
-                 bgColor:"pink.500",
-                 cursor:"default",
-             }}
-            >
-              1
-            </Button>
-            <Button
-             size="sm"
-             fontSize="xs"
-             width="4"
-             bg="gray.700"
-             _hover={{
-                 bg:"gray.500"
-             }}
-            >
-              2
-            </Button>
-            <Button
-             size="sm"
-             fontSize="xs"
-             width="4"
-             bg="gray.700"
-             _hover={{
-                 bg:"gray.500"
-             }}
-            >
-              3
-            </Button>
-            <Button
-             size="sm"
-             fontSize="xs"
-             width="4"
-             bg="gray.700"
-             _hover={{
-                 bg:"gray.500"
-             }}
-            >
-              4
-            </Button>
-            <Button
-             size="sm"
-             fontSize="xs"
-             width="4"
-             bg="gray.700"
-             _hover={{
-                 bg:"gray.500"
-             }}
-            >
-              5
-            </Button>
+             <PaginationItems number={1} isCurrent/>
+             <PaginationItems number={2} />
+             <PaginationItems number={3} />
+             <PaginationItems number={4} />
+             <PaginationItems number={5} />
+             <PaginationItems number={6} />
            </Stack>
         </Stack>
     )
